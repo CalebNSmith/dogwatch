@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DogWatch</string>
+    <string name="websocket_ip_port">websocket_ip:port</string>
+    <string name="home_network_id">home_network_id</string>
+    <string name="unknown">UNKNOWN</string>
+
+</resources>

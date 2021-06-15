@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.fragment.app.FragmentContainerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragment_container_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <EditText
+        android:id="@+id/et_ipaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/websocket_ip_port"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        />
+
+    <Button
+        android:id="@+id/b_laying"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Laying"
+        />
+
+    <Button
+        android:id="@+id/b_sitting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sitting"
+        />
+
+    <Button
+        android:id="@+id/b_standing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Standing"
+        />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="b_laying,b_sitting,b_standing"
+        app:flow_horizontalGap="30dp"
+        app:flow_horizontalAlign="start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <Button
+        android:id="@+id/b_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Camera"
+        />
+
+    <Button
+        android:id="@+id/b_rtsp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RTSP"
+        />
+
+    <Button
+        android:id="@+id/b_webcam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Webcam"
+        />
+
+    <Button
+        android:id="@+id/b_restart_nano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset nano"
+        />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_controls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="b_camera,b_rtsp,b_webcam,b_restart_nano"
+        app:flow_horizontalGap="30dp"
+        app:flow_horizontalAlign="start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
+    <TextView
+        android:id="@+id/tv_websocket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WEB"
+        android:textColor="@android:color/holo_red_dark"
+        />
+
+    <TextView
+        android:id="@+id/tv_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MOD"
+        android:textColor="@android:color/holo_red_dark"
+        />
+
+    <TextView
+        android:id="@+id/tv_prediction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="POS"
+        android:textColor="@android:color/holo_red_dark"
+        />
+
+    <TextView
+        android:id="@+id/tv_vals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VAL"
+        android:textColor="@android:color/holo_red_dark"
+        />
+
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:constraint_referenced_ids="tv_websocket,tv_model,tv_prediction,tv_vals"
+        app:flow_horizontalAlign="start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,5 @@
+rootProject.name = "DogWatch"
+include ':app'
+include ':opencv'
+include ':rtsp'
+include ':java'
