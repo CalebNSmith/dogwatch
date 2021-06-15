@@ -1,0 +1,3 @@
+#!/bin/bash
+
+while read f; do wget $f; done < $1

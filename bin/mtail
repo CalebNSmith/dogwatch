@@ -1,0 +1,13 @@
+#!/bin/bash
+
+main () {
+  source "$dogs_globals" &&
+  running_model_log=$(get_running_model_log)
+  if [[ -z "$running_model_log" ]]; then
+    echo "No most recent log in log/"
+    exit
+  fi
+  tail -f -n 1000 "$LOG_DIR/$running_model_log"
+}
+
+main

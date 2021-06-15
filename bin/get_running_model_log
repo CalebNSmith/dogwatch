@@ -1,0 +1,14 @@
+#!/bin/bash
+
+get_running_model_log() {
+  ls -1t "$LOG_DIR" | \
+  grep -v -e "err.log" -e "abortions" -e "keepers" | \
+  awk 'NR==1'
+}
+
+main() {
+  source $dogs_globals &&
+  get_running_model_log
+}
+
+main

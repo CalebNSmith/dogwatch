@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# stanford_dogs allpaws german_shepards australian_shepards
+
+base_dir="/home/dan/dogs/img"
+allpaws=("german_shepards" "australian_shepards")
+parse_args() {
+  dir_arr=()
+  for a in "$@"; do
+    if [[ $a == "allpaws" ]]; then
+      for b in ${allpaws[@]}; do
+        dir_arr+=("$base_dir/$a/$b")
+      done
+    else
+      dir_arr+=("$base_dir/$a")
+    fi
+  done
+  echo ${dir_arr[@]}
+}
+
+make_lists() {
+
+}
+tally() {
+  for i in $IMG_DIR/*/* ; do 
+    rm -f $i/._*; 
+    echo -n $i" "; 
+    (find "$i" -type f | wc -l); 
+  done
+}
+
+main() {
+  parse_args "$@" | make_lists
+}
+main "$@"

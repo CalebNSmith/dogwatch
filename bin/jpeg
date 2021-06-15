@@ -1,0 +1,3 @@
+#!/bin/bash
+
+for f in *.jpg; do mv -- "$f" "${f%.jpg}.jpeg"; done

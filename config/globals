@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+export DOGS_DIR="$HOME/dogs"
+export LOG_DIR="$DOGS_DIR/log/"
+export CHECKPOINTS_DIR="$DOGS_DIR/checkpoints/"
+export SAVED_MODELS="$DOGS_DIR/saved_models/"
+
+export IMG_DIR="$DOGS_DIR/img"
+export TRAINING_DIR="$IMG_DIR/training_data/"
+export VALIDATION_DIR="$IMG_DIR/validation_data/"

@@ -1,0 +1,38 @@
+#!/bin/bash
+
+tally() {
+  for i in $IMG_DIR/*/* ; do 
+    rm -f $i/._*; 
+    echo -n $i" "; 
+    (find "$i" -type f | wc -l); 
+  done
+}
+
+tally_with_arg() {
+  case "$1" in
+    a | all )
+      tally;
+      ;;
+    t | training)
+      tally | grep "training";
+      ;;
+    v | validation)
+      tally | grep "validation";
+      ;;
+    lr | labeled_raw)
+      tally | grep "labeled_raw";
+      ;;
+    *)
+      echo "Usage: $0 {a|t|v|lr}";
+      ;;
+  esac
+}
+
+main() {
+  if [[ "$#" -eq 1 ]]; then
+    tally_with_arg "$@";
+  elif [[ "$#" -eq 0 ]]; then
+    tally | grep -e "training" -e "validation" | grep -v 'testing'; # sane default
+  fi
+}
+main "$@" | sed -e 's/\/home\/dan\/dogs\///g'

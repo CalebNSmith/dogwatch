@@ -1,0 +1,15 @@
+#!/bin/bash
+
+print_weights(){
+  tally t | awk '{print $2}'
+}
+
+main() {
+  if [[ "$#" -eq 0 ]]; then
+    print_weights
+  elif [[ "$1" == "script" ]]; then
+    print_weights | awk '{print}' ORS=" "
+  fi
+}
+
+main "$@"

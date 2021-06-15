@@ -1,0 +1,21 @@
+#!/bin/bash
+
+get_pid() {
+  nvidia-smi | tail -n 2 | grep -v '+' | awk '{print $5}'
+}
+
+kill_running_model() {
+  local _running_model=$(get_pid)
+  if [[ -n "$_running_model" ]]; then
+    kill -15 $_running_model;
+    echo "RIP killing PID $_running_model";
+    sleep 3;
+  fi
+}
+
+main() {
+  source $dogs_globals &&
+  kill_running_model
+}
+
+main
