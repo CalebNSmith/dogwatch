@@ -1,10 +1,8 @@
-# Dogs
+A machine learning approach to determine if your dog is standing, sitting, or laying.
 
-## TODO
-* Try using numpy ops in hd5f storage and reads instead of tensorflow
-* Get images that were incorrectly predicted
-* Store image ids in hd5f so can do ^
+The dogs directory contains all of the python code that handles training and prediction (using TensorFlow). It also contains a websocket that will offer predictions from a RTSP/UDP stream and forward the results to another endpoint (e.g. android device).
 
-## Open Questions
-* Do we even need transfer learning? Just use regular effnet?
-* When do we buy one of these? [RTX 3090](https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090/)
+The android directory contains the android application that offers 
+1. Local prediction from a converted TensorFlowLite model
+2. Streaming the camera to a server for prediction
+3. Connecting to a webcam and receiving the predictions simultaneously
